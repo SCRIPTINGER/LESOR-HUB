@@ -19,7 +19,7 @@ local Window = Rayfield:CreateWindow({
       Subtitle = "Lesor HUB",
       Note = "key for no grab Lesor HUB code",
       FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
-      SaveKey = false, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
       GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
       Key = {"Helor HUB","PREMIUM"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
    }
@@ -43,6 +43,15 @@ local Slider = Tab:CreateSlider({
    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
    end,
 })
+local ColorPicker = Tab:CreateColorPicker({
+    Name = "Color Picker",
+    Color = Color3.fromRGB(255,255,255),
+    Flag = "ColorPicker1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Value)
+        -- The function that takes place every time the color picker is moved/changed
+        -- The variable (Value) is a Color3fromRGB value based on which color is selected
+    end
+})
 local Tab = Window:CreateTab("Settings", 4483362458) -- Title, Image
 local Section = Tab:CreateSection("Lesor HUB")
 local Label = Tab:CreateLabel("CREDITS:viktor_vary")
@@ -51,7 +60,7 @@ local Button = Tab:CreateButton({
    Name = "Helor HUB",
    Callback = function()
 -- Ссылка на Библиотеку
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Robojini/Tuturial_UI_Library/main/UI_Template_1"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/SCRIPTINGER/LESOR-HUB/main/ALPHA"))()
 -- Создать окно UI
 local Window = Library.CreateLib("Helor HUB PREMIUM", "RJTheme5")
 
