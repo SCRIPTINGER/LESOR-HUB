@@ -1,9 +1,3 @@
---[[
-    Version: 1.0.5
-    Last Update: 14 / 11 / 2022 | Day / Month / Year
-]]--
-
---// Source
 function obfuscate(source,VarName,WaterMark)
         warn("Started obfuscate")
         local Variable = VarName or "SCWE"
@@ -16,9 +10,9 @@ function obfuscate(source,VarName,WaterMark)
         local ticks = tick()
 
         if typeof(WaterMark) == "string" and WaterMark ~= nil then
-            WM = "    "..tostring(WaterMark).." | Secure by zahocelr"
+            WM = "    "..tostring(WaterMark).." | Secured"
         else
-            WM = "    ".."WaterMark".." | Secure by zahocelr"
+            WM = "    ".."WaterMark".." | Secured"
         end
 
         WM = "--[[".."\n".. tostring(WM) .."\n".."]]--".."\n\n"
@@ -75,7 +69,7 @@ function obfuscate(source,VarName,WaterMark)
                 "Touch some grass",
                 "New update when?",
                 "zahocelr",
-                "Free obfuscator!",
+                "T1",
                 "E",
                 random_(math.random(50,150)),
             }
